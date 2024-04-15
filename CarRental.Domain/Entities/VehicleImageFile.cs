@@ -1,4 +1,4 @@
-namespace CarRental.Domain.Entities.Vehicle
+namespace CarRental.Domain.Entities
 {
     public class VehicleImageFile : File
     {

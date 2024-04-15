@@ -1,7 +1,7 @@
 ﻿using CarRental.Domain.Entities.Common;
 using CarRental.Domain.Enums;
 
-namespace CarRental.Domain.Entities.Vehicle
+namespace CarRental.Domain.Entities
 {
     public class Vehicle : BaseEntity
     {

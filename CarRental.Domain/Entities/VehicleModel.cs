@@ -1,6 +1,6 @@
 ﻿using CarRental.Domain.Entities.Common;
 
-namespace CarRental.Domain.Entities.Vehicle
+namespace CarRental.Domain.Entities
 {
     public class VehicleModel : BaseEntity
     {
