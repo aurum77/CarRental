@@ -1,6 +1,5 @@
 using CarRental.Domain.Entities;
 using CarRental.Domain.Entities.Identity;
-using CarRental.Domain.Entities.Vehicle;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
