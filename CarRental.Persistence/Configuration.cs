@@ -22,7 +22,7 @@ namespace CarRental.Persistence
                     configurationManager.AddJsonFile("appsettings.Development.json");
                 }
 
-                return configurationManager.GetConnectionString("postgres");
+                return configurationManager.GetConnectionString("PostgreSQL");
             }
         }
     }
