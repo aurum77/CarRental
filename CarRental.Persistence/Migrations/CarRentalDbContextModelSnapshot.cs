@@ -8,8 +8,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace CarRental.Persistence.Migrations
-{
+namespace CarRental.Persistence.Migrations;
+
     [DbContext(typeof(CarRentalDbContext))]
     partial class CarRentalDbContextModelSnapshot : ModelSnapshot
     {
@@ -601,4 +601,3 @@ namespace CarRental.Persistence.Migrations
 #pragma warning restore 612, 618
         }
     }
-}

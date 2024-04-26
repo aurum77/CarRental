@@ -1,29 +1,28 @@
 using Microsoft.Extensions.Configuration;
 
-namespace CarRental.Persistence
+namespace CarRental.Persistence;
+
+static class Configuration
 {
-    static class Configuration
+    public static string ConnectionString
     {
-        public static string ConnectionString
+        get
         {
-            get
+            ConfigurationManager configurationManager = new();
+
+            try
             {
-                ConfigurationManager configurationManager = new();
-
-                try
-                {
-                    configurationManager.SetBasePath(
-                        Path.Combine(Directory.GetCurrentDirectory(), "../CarRental.API")
-                    );
-                    configurationManager.AddJsonFile("appsettings.Production.json");
-                }
-                catch
-                {
-                    configurationManager.AddJsonFile("appsettings.Development.json");
-                }
-
-                return configurationManager.GetConnectionString("PostgreSQL");
+                configurationManager.SetBasePath(
+                    Path.Combine(Directory.GetCurrentDirectory(), "../CarRental.API")
+                );
+                configurationManager.AddJsonFile("appsettings.Production.json");
             }
+            catch
+            {
+                configurationManager.AddJsonFile("appsettings.Development.json");
+            }
+
+            return configurationManager.GetConnectionString("PostgreSQL");
         }
     }
 }

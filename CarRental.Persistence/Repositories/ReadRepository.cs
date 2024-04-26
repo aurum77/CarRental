@@ -4,66 +4,65 @@ using CarRental.Domain.Entities.Common;
 using CarRental.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarRental.Persistence.Repositories
+namespace CarRental.Persistence.Repositories;
+
+public class ReadRepository<T> : IReadRepository<T>
+    where T : BaseEntity
 {
-    public class ReadRepository<T> : IReadRepository<T>
-        where T : BaseEntity
+    private readonly CarRentalDbContext _context;
+
+    public ReadRepository(CarRentalDbContext context)
     {
-        private readonly CarRentalDbContext _context;
+        _context = context;
+    }
 
-        public ReadRepository(CarRentalDbContext context)
+    public DbSet<T> Table => _context.Set<T>();
+
+    public IQueryable<T> GetAll(bool tracking = true)
+    {
+        IQueryable<T> query = Table.AsQueryable();
+
+        if (!tracking)
         {
-            _context = context;
+            query = query.AsNoTracking();
         }
 
-        public DbSet<T> Table => _context.Set<T>();
+        return query;
+    }
 
-        public IQueryable<T> GetAll(bool tracking = true)
+    public async Task<T> GetByIdAsync(string id, bool tracking = true)
+    {
+        IQueryable<T> query = Table.AsQueryable();
+
+        if (!tracking)
         {
-            IQueryable<T> query = Table.AsQueryable();
-
-            if (!tracking)
-            {
-                query = query.AsNoTracking();
-            }
-
-            return query;
+            query = query.AsNoTracking();
         }
 
-        public async Task<T> GetByIdAsync(string id, bool tracking = true)
+        return await query.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+    }
+
+    public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
+    {
+        IQueryable<T> query = Table.AsQueryable();
+
+        if (!tracking)
         {
-            IQueryable<T> query = Table.AsQueryable();
-
-            if (!tracking)
-            {
-                query = query.AsNoTracking();
-            }
-
-            return await query.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+            query = query.AsNoTracking();
         }
 
-        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
+        return await query.FirstOrDefaultAsync(method);
+    }
+
+    public IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
+    {
+        IQueryable<T> query = Table.Where(method);
+
+        if (!tracking)
         {
-            IQueryable<T> query = Table.AsQueryable();
-
-            if (!tracking)
-            {
-                query = query.AsNoTracking();
-            }
-
-            return await query.FirstOrDefaultAsync(method);
+            query = query.AsNoTracking();
         }
 
-        public IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
-        {
-            IQueryable<T> query = Table.Where(method);
-
-            if (!tracking)
-            {
-                query = query.AsNoTracking();
-            }
-
-            return query;
-        }
+        return query;
     }
 }

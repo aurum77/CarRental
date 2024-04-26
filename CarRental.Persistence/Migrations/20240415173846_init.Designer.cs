@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace CarRental.Persistence.Migrations
-{
+namespace CarRental.Persistence.Migrations;
+
     [DbContext(typeof(CarRentalDbContext))]
     [Migration("20240415173846_init")]
     partial class init
@@ -604,4 +604,3 @@ namespace CarRental.Persistence.Migrations
 #pragma warning restore 612, 618
         }
     }
-}

@@ -1,9 +1,8 @@
 ﻿using CarRental.Domain.Entities.Common;
 
-namespace CarRental.Domain.Entities
+namespace CarRental.Domain.Entities;
+
+public class VehicleModel : BaseEntity
 {
-    public class VehicleModel : BaseEntity
-    {
-        public string? ModelName { get; set; }
-    }
+    public string? ModelName { get; set; }
 }

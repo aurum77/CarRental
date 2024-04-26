@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Repositories.VehicleModel
-{
-    public interface IVehicleModelWriteRepository : IWriteRepository<Domain.Entities.VehicleModel>
-    {
-    }
-}
+namespace CarRental.Application.Repositories.VehicleModel;
+
+public interface IVehicleModelWriteRepository : IWriteRepository<Domain.Entities.VehicleModel> { }

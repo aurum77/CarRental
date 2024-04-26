@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Repositories.VehicleImageFile
-{
-    public interface IVehicleImageFileReadRepository : IReadRepository<Domain.Entities.VehicleImageFile>
-    {
-    }
-}
+namespace CarRental.Application.Repositories.VehicleImageFile;
+
+public interface IVehicleImageFileReadRepository
+    : IReadRepository<Domain.Entities.VehicleImageFile> { }

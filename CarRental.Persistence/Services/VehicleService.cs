@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Abstractions.Services
-{
-    public class VehicleService : IVehicleService
-    {
-    }
-}
+namespace CarRental.Application.Abstractions.Services;
+
+public class VehicleService : IVehicleService { }

@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Repositories.RentalPayment
-{
-    public interface IRentalPaymentWriteRepository : IWriteRepository<Domain.Entities.RentalPayment>
-    {
-    }
-}
+namespace CarRental.Application.Repositories.RentalPayment;
+
+public interface IRentalPaymentWriteRepository : IWriteRepository<Domain.Entities.RentalPayment> { }

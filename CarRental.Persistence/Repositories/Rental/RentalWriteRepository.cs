@@ -1,17 +1,15 @@
-﻿using CarRental.Application.Repositories.Rental;
-using CarRental.Persistence.Contexts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarRental.Application.Repositories.Rental;
+using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.Rental
+namespace CarRental.Persistence.Repositories.Rental;
+
+public class RentalWriteRepository : WriteRepository<Domain.Entities.Rental>, IRentalWriteRepository
 {
-    public class RentalWriteRepository : WriteRepository<Domain.Entities.Rental>, IRentalWriteRepository
-    {
-        public RentalWriteRepository(CarRentalDbContext context) : base(context)
-        {
-        }
-    }
+    public RentalWriteRepository(CarRentalDbContext context)
+        : base(context) { }
 }

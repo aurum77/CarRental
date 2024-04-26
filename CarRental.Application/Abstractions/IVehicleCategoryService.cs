@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Abstractions
-{
-    public interface IVehicleCategoryService
-    {
-    }
-}
+namespace CarRental.Application.Abstractions;
+
+public interface IVehicleCategoryService { }

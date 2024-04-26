@@ -1,7 +1,6 @@
-namespace CarRental.Domain.Entities
+namespace CarRental.Domain.Entities;
+
+public class VehicleImageFile : File
 {
-    public class VehicleImageFile : File
-    {
-        public bool Enabled { get; set; }
-    }
+    public bool Enabled { get; set; }
 }

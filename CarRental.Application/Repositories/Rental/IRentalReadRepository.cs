@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Repositories.Rental
-{
-    public interface IRentalReadRepository : IReadRepository<Domain.Entities.Rental>
-    {
-    }
-}
+namespace CarRental.Application.Repositories.Rental;
+
+public interface IRentalReadRepository : IReadRepository<Domain.Entities.Rental> { }

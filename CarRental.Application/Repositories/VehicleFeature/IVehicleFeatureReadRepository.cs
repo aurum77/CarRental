@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Repositories.VehicleFeature
-{
-    public interface IVehicleFeatureReadRepository : IReadRepository<Domain.Entities.VehicleFeature> 
-    {
-    }
-}
+namespace CarRental.Application.Repositories.VehicleFeature;
+
+public interface IVehicleFeatureReadRepository : IReadRepository<Domain.Entities.VehicleFeature> { }
