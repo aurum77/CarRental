@@ -1,5 +1,6 @@
 using CarRental.Application;
 using CarRental.Persistence;
+using CarRental.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.ConfigureExceptionHandler<Program>();
 
 app.MapControllers();
 
