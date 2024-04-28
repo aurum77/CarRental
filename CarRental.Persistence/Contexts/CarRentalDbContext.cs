@@ -14,7 +14,7 @@ public class CarRentalDbContext(DbContextOptions options)
     public DbSet<VehicleImageFile>? VehicleImageFiles { get; set; }
     public DbSet<VehicleMake>? VehicleMakes { get; set; }
     public DbSet<VehicleModel>? VehicleModels { get; set; }
-    public DbSet<Domain.Entities.File>? Files { get; set; }
+    public DbSet<Domain.Entities.Common.File>? Files { get; set; }
     public DbSet<Rental>? Rentals { get; set; }
     public DbSet<RentalPayment>? RentalPayments { get; set; }
 }
