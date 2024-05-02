@@ -1,18 +1,22 @@
+using CarRental.API.Middlewares;
 using CarRental.Application;
 using CarRental.Persistence;
-using CarRental.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices();
+
+builder.Services.AddExceptionHandler<CustomExceptionHandlerMiddleware>();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 
@@ -23,11 +27,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-app.ConfigureExceptionHandler<Program>();
 
 app.MapControllers();
 
