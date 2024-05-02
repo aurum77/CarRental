@@ -1,7 +1,8 @@
 using CarRental.Application.Abstractions;
+using CarRental.Application.Features.Queries.Vehicle.GetVehicleById;
 using MediatR;
 
-namespace CarRental.Application.Features.Queries.Vehicle.GetVehicleById;
+namespace CarRental.Application.Features.Queries;
 
 public class GetVehicleByIdHandler : IRequestHandler<GetVehicleByIdRequest, GetVehicleByIdResponse>
 {
@@ -17,7 +18,7 @@ public class GetVehicleByIdHandler : IRequestHandler<GetVehicleByIdRequest, GetV
         CancellationToken cancellationToken
     )
     {
-        var vehicle = await _vehicleService.GetVehicleById(request.Id);
+        var vehicle = await _vehicleService.GetVehicleByIdAsync(request.Id);
 
         return new()
         {

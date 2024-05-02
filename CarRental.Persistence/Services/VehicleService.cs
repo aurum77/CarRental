@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CarRental.Application.Exceptions;
 using CarRental.Application.Repositories.Vehicle;
 using CarRental.Domain.Entities;
 
@@ -17,7 +13,7 @@ public class VehicleService : IVehicleService
         _vehicleReadRepository = vehicleReadRepository;
     }
 
-    public async Task<Vehicle> GetVehicleById(string id)
+    public async Task<Vehicle> GetVehicleByIdAsync(string id)
     {
         var vehicle = await _vehicleReadRepository.GetByIdAsync(id);
 
