@@ -1,4 +1,5 @@
 using CarRental.Domain.Entities;
+using CarRental.Domain.Entities.Common;
 using CarRental.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -17,4 +18,21 @@ public class CarRentalDbContext(DbContextOptions options)
     public DbSet<Domain.Entities.Common.File>? Files { get; set; }
     public DbSet<Rental>? Rentals { get; set; }
     public DbSet<RentalPayment>? RentalPayments { get; set; }
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        var entries = ChangeTracker.Entries<BaseEntity>();
+
+        foreach (var entry in entries)
+        {
+            _ = entry.State switch
+            {
+                EntityState.Added => entry.Entity.CreateDate = DateTime.UtcNow,
+                EntityState.Modified => entry.Entity.UpdateDate = DateTime.UtcNow,
+                _ => DateTime.UtcNow
+            };
+        }
+
+        return base.SaveChangesAsync(cancellationToken);
+    }
 }
