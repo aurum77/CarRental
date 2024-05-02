@@ -19,7 +19,7 @@ public class VehicleService : IVehicleService
 
         if (vehicle == null)
         {
-            throw new Exception("Requested Vehicle not found");
+            throw new NotFoundException("Requested vehicle not found");
         }
 
         return vehicle;
