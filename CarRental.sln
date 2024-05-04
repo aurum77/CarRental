@@ -5,6 +5,7 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2E3D6882-7E78-456F-A5AD-8900903EE837}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -18,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.Domain", "CarRent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.Infrastructure", "CarRental.Infrastructure\CarRental.Infrastructure.csproj", "{C1FE85BC-E5CC-45E5-8669-05A3CBA6FCCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Application", "CarRental.Application\CarRental.Application.csproj", "{F5D59403-B1E9-4657-B7A8-530017DC31D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.Application", "CarRental.Application\CarRental.Application.csproj", "{F5D59403-B1E9-4657-B7A8-530017DC31D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Persistence", "CarRental.Persistence\CarRental.Persistence.csproj", "{9FD30725-A4A9-4EF4-A99F-2663F1F3EB85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.Persistence", "CarRental.Persistence\CarRental.Persistence.csproj", "{9FD30725-A4A9-4EF4-A99F-2663F1F3EB85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.API", "CarRental.API\CarRental.API.csproj", "{F103B7B9-5F4A-4062-BBDE-3143FE7FB0D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRental.API", "CarRental.API\CarRental.API.csproj", "{F103B7B9-5F4A-4062-BBDE-3143FE7FB0D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
