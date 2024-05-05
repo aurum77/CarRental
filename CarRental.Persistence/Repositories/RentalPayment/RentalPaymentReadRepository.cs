@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CarRental.Application.Repositories;
-using CarRental.Application.Repositories.RentalPayment;
+using CarRental.Domain.Entities;
 using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.RentalPayment;
+namespace CarRental.Persistence.Repositories;
 
 public class RentalPaymentReadRepository
-    : ReadRepository<Domain.Entities.RentalPayment>,
+    : ReadRepository<RentalPayment>,
         IRentalPaymentReadRepository
 {
     public RentalPaymentReadRepository(CarRentalDbContext context)

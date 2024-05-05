@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarRental.Application.Repositories.VehicleModel;
+using CarRental.Application.Repositories;
+using CarRental.Domain.Entities;
 using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.VehicleModel;
+namespace CarRental.Persistence.Repositories;
 
 public class VehicleModelWriteRepository
-    : WriteRepository<Domain.Entities.VehicleModel>,
+    : WriteRepository<VehicleModel>,
         IVehicleModelWriteRepository
 {
     public VehicleModelWriteRepository(CarRentalDbContext context)

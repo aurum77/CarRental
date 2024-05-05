@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarRental.Application.Repositories.RentalPayment;
+using CarRental.Application.Repositories;
+using CarRental.Domain.Entities;
 using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.RentalPayment;
+namespace CarRental.Persistence.Repositories;
 
 public class RentalPaymentWriteRepository
-    : WriteRepository<Domain.Entities.RentalPayment>,
+    : WriteRepository<RentalPayment>,
         IRentalPaymentWriteRepository
 {
     public RentalPaymentWriteRepository(CarRentalDbContext context)

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CarRental.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Application.Repositories.VehicleCategory;
+namespace CarRental.Application.Repositories;
 
 public interface IVehicleCategoryReadRepository
-    : IReadRepository<Domain.Entities.VehicleCategory> { }
+    : IReadRepository<VehicleCategory> { }

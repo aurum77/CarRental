@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarRental.Application.Repositories.VehicleImageFile;
+using CarRental.Application.Repositories;
+using CarRental.Domain.Entities;
 using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.VehicleImageFile;
+namespace CarRental.Persistence.Repositories;
 
 public class VehicleImageFileReadRepository
-    : ReadRepository<Domain.Entities.VehicleImageFile>,
+    : ReadRepository<VehicleImageFile>,
         IVehicleImageFileReadRepository
 {
     public VehicleImageFileReadRepository(CarRentalDbContext context)

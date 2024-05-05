@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarRental.Application.Repositories.VehicleFeature;
+using CarRental.Application.Repositories;
+using CarRental.Domain.Entities;
 using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.VehicleFeature;
+namespace CarRental.Persistence.Repositories;
 
 public class VehicleFeatureReadRepository
-    : ReadRepository<Domain.Entities.VehicleFeature>,
+    : ReadRepository<VehicleFeature>,
         IVehicleFeatureReadRepository
 {
     public VehicleFeatureReadRepository(CarRentalDbContext context)

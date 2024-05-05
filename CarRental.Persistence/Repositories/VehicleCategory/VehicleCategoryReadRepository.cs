@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CarRental.Application.Repositories;
-using CarRental.Application.Repositories.VehicleCategory;
+using CarRental.Domain.Entities;
 using CarRental.Persistence.Contexts;
 
-namespace CarRental.Persistence.Repositories.VehicleCategory;
+namespace CarRental.Persistence.Repositories;
 
 public class VehicleCategoryReadRepository
-    : ReadRepository<Domain.Entities.VehicleCategory>,
+    : ReadRepository<VehicleCategory>,
         IVehicleCategoryReadRepository
 {
     public VehicleCategoryReadRepository(CarRentalDbContext context)

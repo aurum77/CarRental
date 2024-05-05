@@ -1,5 +1,5 @@
 ﻿using CarRental.Application.Exceptions;
-using CarRental.Application.Repositories.Vehicle;
+using CarRental.Application.Repositories;
 using CarRental.Domain.Entities;
 
 namespace CarRental.Application.Abstractions.Services;

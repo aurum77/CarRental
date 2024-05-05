@@ -1,8 +1,8 @@
 using CarRental.Application.Abstractions;
 using CarRental.Application.Abstractions.Services;
-using CarRental.Application.Repositories.Vehicle;
+using CarRental.Application.Repositories;
 using CarRental.Persistence.Contexts;
-using CarRental.Persistence.Repositories.Vehicle;
+using CarRental.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
