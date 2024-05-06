@@ -1,6 +1,9 @@
+using CarRental.API.Extensions;
 using CarRental.API.Middlewares;
 using CarRental.Application;
 using CarRental.Persistence;
+using CarRental.Persistence.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +26,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.EnsureDatabaseCreated();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
