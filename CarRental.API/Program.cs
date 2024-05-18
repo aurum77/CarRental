@@ -2,13 +2,13 @@ using CarRental.API.Extensions;
 using CarRental.API.Middlewares;
 using CarRental.Application;
 using CarRental.Persistence;
-using CarRental.Persistence.Contexts;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configure logger
+builder.Services.AddSerilogLoggerMiddleware(builder.Logging);
 
+// Add services to the container.
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

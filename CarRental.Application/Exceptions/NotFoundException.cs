@@ -1,5 +1,8 @@
+using CarRental.Application.Exceptions.Attributes;
+
 namespace CarRental.Application.Exceptions;
 
+[CustomException]
 public class NotFoundException : Exception
 {
     private string message { get; }
