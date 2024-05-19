@@ -4,17 +4,17 @@ using MediatR;
 
 namespace CarRental.Application.Features.Queries;
 
-public class GetVehicleByIdHandler : IRequestHandler<GetVehicleByIdRequest, GetVehicleByIdResponse>
+public class GetVehicleByIdQueryHandler : IRequestHandler<GetVehicleByIdQueryRequest, GetVehicleByIdQueryResponse>
 {
     private readonly IVehicleService _vehicleService;
 
-    public GetVehicleByIdHandler(IVehicleService vehicleService)
+    public GetVehicleByIdQueryHandler(IVehicleService vehicleService)
     {
         _vehicleService = vehicleService;
     }
 
-    public async Task<GetVehicleByIdResponse> Handle(
-        GetVehicleByIdRequest request,
+    public async Task<GetVehicleByIdQueryResponse> Handle(
+        GetVehicleByIdQueryRequest request,
         CancellationToken cancellationToken
     )
     {
