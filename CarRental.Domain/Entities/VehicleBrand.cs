@@ -2,8 +2,9 @@
 
 namespace CarRental.Domain.Entities;
 
-public class VehicleMake : BaseEntity
+public class VehicleBrand : BaseEntity
 {
-    public string? BrandName { get; set; }
+    public string? Name { get; set; }
+    public string? Description { get; set; }
     public ICollection<VehicleModel> Models { get; } = new List<VehicleModel>();
 }

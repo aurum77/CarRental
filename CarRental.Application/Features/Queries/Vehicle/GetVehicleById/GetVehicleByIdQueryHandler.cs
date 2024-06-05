@@ -22,8 +22,8 @@ public class GetVehicleByIdQueryHandler : IRequestHandler<GetVehicleByIdQueryReq
 
         return new()
         {
-            MakeName = vehicle.Make?.BrandName,
-            ModelName = vehicle.Model?.ModelName,
+            MakeName = vehicle.Brand?.Name,
+            ModelName = vehicle.Model?.Name,
             DailyPrice = vehicle.DailyPrice,
             VehicleStatus = vehicle.Status.ToString()
         };

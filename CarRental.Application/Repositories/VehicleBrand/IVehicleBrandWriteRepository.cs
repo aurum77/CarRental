@@ -7,4 +7,4 @@ using System.Threading.Tasks;
 
 namespace CarRental.Application.Repositories;
 
-public interface IVehicleFeatureReadRepository : IReadRepository<VehicleFeature> { }
+public interface IVehicleBrandWriteRepository : IWriteRepository<VehicleBrand> { }
