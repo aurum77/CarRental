@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D1C030E-D1C9-4341-9CFC-D43AFDC11E4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F666EC0C-6232-46B6-8A63-419009923ADD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Application", "src\Core\CarRental.Application\CarRental.Application.csproj", "{242ADF55-4899-47D2-9442-59C8B07259CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Domain", "src\Core\CarRental.Domain\CarRental.Domain.csproj", "{558D182B-370B-47A8-BD23-9212CF77CABB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8D56CA80-01C1-4159-A8A2-229B653AF0DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Persistence", "src\Infrastructure\CarRental.Persistence\CarRental.Persistence.csproj", "{F1EFC251-E2E6-4A39-9B14-F964573E0525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Infrastructure", "src\Infrastructure\CarRental.Infrastructure\CarRental.Infrastructure.csproj", "{EF5720EE-1C45-4BD2-8C43-806472E24ACD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{377C7A7F-4AFA-428F-9EB4-660C939503DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.WebAPI", "src\Presentation\CarRental.WebAPI\CarRental.WebAPI.csproj", "{06FC3911-6C0B-40F6-913C-E70287BAC3AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{242ADF55-4899-47D2-9442-59C8B07259CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242ADF55-4899-47D2-9442-59C8B07259CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242ADF55-4899-47D2-9442-59C8B07259CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242ADF55-4899-47D2-9442-59C8B07259CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{558D182B-370B-47A8-BD23-9212CF77CABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558D182B-370B-47A8-BD23-9212CF77CABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558D182B-370B-47A8-BD23-9212CF77CABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558D182B-370B-47A8-BD23-9212CF77CABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1EFC251-E2E6-4A39-9B14-F964573E0525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1EFC251-E2E6-4A39-9B14-F964573E0525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1EFC251-E2E6-4A39-9B14-F964573E0525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EFC251-E2E6-4A39-9B14-F964573E0525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF5720EE-1C45-4BD2-8C43-806472E24ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF5720EE-1C45-4BD2-8C43-806472E24ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF5720EE-1C45-4BD2-8C43-806472E24ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF5720EE-1C45-4BD2-8C43-806472E24ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06FC3911-6C0B-40F6-913C-E70287BAC3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06FC3911-6C0B-40F6-913C-E70287BAC3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06FC3911-6C0B-40F6-913C-E70287BAC3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06FC3911-6C0B-40F6-913C-E70287BAC3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F666EC0C-6232-46B6-8A63-419009923ADD} = {4D1C030E-D1C9-4341-9CFC-D43AFDC11E4B}
+		{242ADF55-4899-47D2-9442-59C8B07259CF} = {F666EC0C-6232-46B6-8A63-419009923ADD}
+		{558D182B-370B-47A8-BD23-9212CF77CABB} = {F666EC0C-6232-46B6-8A63-419009923ADD}
+		{8D56CA80-01C1-4159-A8A2-229B653AF0DE} = {4D1C030E-D1C9-4341-9CFC-D43AFDC11E4B}
+		{F1EFC251-E2E6-4A39-9B14-F964573E0525} = {8D56CA80-01C1-4159-A8A2-229B653AF0DE}
+		{EF5720EE-1C45-4BD2-8C43-806472E24ACD} = {8D56CA80-01C1-4159-A8A2-229B653AF0DE}
+		{377C7A7F-4AFA-428F-9EB4-660C939503DF} = {4D1C030E-D1C9-4341-9CFC-D43AFDC11E4B}
+		{06FC3911-6C0B-40F6-913C-E70287BAC3AB} = {377C7A7F-4AFA-428F-9EB4-660C939503DF}
+	EndGlobalSection
+EndGlobal
