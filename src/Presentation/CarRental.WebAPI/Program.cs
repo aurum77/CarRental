@@ -1,5 +1,8 @@
+using CarRental.WebAPI.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSerilogLoggerExtension(builder.Logging);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
