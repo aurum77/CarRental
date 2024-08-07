@@ -1,4 +1,8 @@
+using CarRental.Application.Repositories;
+using CarRental.Application.Services;
 using CarRental.Persistence.Contexts;
+using CarRental.Persistence.Repositories;
+using CarRental.Persistence.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +17,7 @@ public static class ServiceRegistration
             options.UseNpgsql(Configuration.ConnectionString);
         });
 
+        services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<IBrandReadRepository, BrandReadRepository>();
         services.AddScoped<IBrandWriteRepository, BrandWriteRepository>();
 
