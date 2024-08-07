@@ -1,11 +1,10 @@
-﻿namespace CarRental.Domain.Enums
+﻿namespace CarRental.Domain.Enums;
+
+public enum Status
 {
-    public enum Status
-    {
-        Available,
-        Rented,
-        BrokenDown,
-        InMaintenance,
-        NotAvailable
-    }
+    Available,
+    Rented,
+    BrokenDown,
+    InMaintenance,
+    NotAvailable
 }

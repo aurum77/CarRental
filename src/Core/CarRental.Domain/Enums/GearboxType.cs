@@ -1,8 +1,7 @@
-﻿namespace CarRental.Domain.Enums
+﻿namespace CarRental.Domain.Enums;
+
+public enum GearboxType
 {
-    public enum GearboxType
-    {
-        Automatic,
-        Manual
-    }
+    Automatic,
+    Manual
 }

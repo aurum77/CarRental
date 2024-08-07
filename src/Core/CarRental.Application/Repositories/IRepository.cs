@@ -1,11 +1,10 @@
 using CarRental.Domain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarRental.Application.Repositories
+namespace CarRental.Application.Repositories;
+
+public interface IRepository<T>
+    where T : BaseEntity
 {
-    public interface IRepository<T>
-        where T : BaseEntity
-    {
-        DbSet<T> Table { get; }
-    }
+    DbSet<T> Table { get; }
 }

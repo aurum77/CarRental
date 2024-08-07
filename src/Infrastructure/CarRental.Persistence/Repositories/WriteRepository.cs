@@ -4,54 +4,53 @@ using CarRental.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace CarRental.Persistence.Repositories
+namespace CarRental.Persistence.Repositories;
+
+public class WriteRepository<T>(CarRentalDbContext context) : IWriteRepository<T>
+    where T : BaseEntity
 {
-    public class WriteRepository<T>(CarRentalDbContext context) : IWriteRepository<T>
-        where T : BaseEntity
+    private readonly CarRentalDbContext _context = context;
+
+    public DbSet<T> Table => _context.Set<T>();
+
+    public async Task<bool> AddAsync(T entity)
     {
-        private readonly CarRentalDbContext _context = context;
+        EntityEntry<T> entityEntry = await Table.AddAsync(entity);
+        return entityEntry.State == EntityState.Added;
+    }
 
-        public DbSet<T> Table => _context.Set<T>();
+    public async Task<bool> AddMultipleAsync(List<T> entities)
+    {
+        await Table.AddRangeAsync(entities);
+        return true;
+    }
 
-        public async Task<bool> AddAsync(T entity)
-        {
-            EntityEntry<T> entityEntry = await Table.AddAsync(entity);
-            return entityEntry.State == EntityState.Added;
-        }
+    public bool Remove(T entity)
+    {
+        EntityEntry<T> entityEntry = Table.Remove(entity);
+        return entityEntry.State == EntityState.Deleted;
+    }
 
-        public async Task<bool> AddMultipleAsync(List<T> entities)
-        {
-            await Table.AddRangeAsync(entities);
-            return true;
-        }
+    public async Task<bool> RemoveAsync(Guid id)
+    {
+        T entity = await Table.FirstOrDefaultAsync(data => data.Id == id);
+        return Remove(entity);
+    }
 
-        public bool Remove(T entity)
-        {
-            EntityEntry<T> entityEntry = Table.Remove(entity);
-            return entityEntry.State == EntityState.Deleted;
-        }
+    public bool RemoveRange(List<T> entities)
+    {
+        Table.RemoveRange(entities);
+        return true;
+    }
 
-        public async Task<bool> RemoveAsync(Guid id)
-        {
-            T entity = await Table.FirstOrDefaultAsync(data => data.Id == id);
-            return Remove(entity);
-        }
+    public Task<int> SaveAsync()
+    {
+        return _context.SaveChangesAsync();
+    }
 
-        public bool RemoveRange(List<T> entities)
-        {
-            Table.RemoveRange(entities);
-            return true;
-        }
-
-        public Task<int> SaveAsync()
-        {
-            return _context.SaveChangesAsync();
-        }
-
-        public bool Update(T model)
-        {
-            EntityEntry entityEntry = Table.Update(model);
-            return entityEntry.State == EntityState.Modified;
-        }
+    public bool Update(T model)
+    {
+        EntityEntry entityEntry = Table.Update(model);
+        return entityEntry.State == EntityState.Modified;
     }
 }

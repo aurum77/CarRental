@@ -1,30 +1,32 @@
 using Microsoft.Extensions.Configuration;
 
-namespace CarRental.Persistence
+namespace CarRental.Persistence;
+
+internal static class Configuration
 {
-    internal static class Configuration
+    public static string ConnectionString
     {
-        public static string ConnectionString
+        get
         {
-            get
+            ConfigurationManager configurationManager = new();
+
+            try
             {
-                ConfigurationManager configurationManager = new();
+                configurationManager.SetBasePath(
+                    Path.Combine(
+                        Directory.GetCurrentDirectory(),
+                        "../../Presentation/CarRental.WebAPI"
+                    )
+                );
 
-                try
-                {
-                    configurationManager.SetBasePath(
-                        Path.Combine(Directory.GetCurrentDirectory(), "../../Presentation/CarRental.WebAPI")
-                    );
-
-                    configurationManager.AddJsonFile("appsettings.Production.json");
-                }
-                catch
-                {
-                    configurationManager.AddJsonFile("appsettings.Development.json");
-                }
-
-                return configurationManager.GetConnectionString("PostgreSQL")!;
+                configurationManager.AddJsonFile("appsettings.Production.json");
             }
+            catch
+            {
+                configurationManager.AddJsonFile("appsettings.Development.json");
+            }
+
+            return configurationManager.GetConnectionString("PostgreSQL")!;
         }
     }
 }
